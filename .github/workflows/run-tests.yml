@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: composer:latest
-      volume:
+      volumes:
         - ${{ github.workspace }}:/app
     steps:
       - name: Checkout the repo
