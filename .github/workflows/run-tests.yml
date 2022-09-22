@@ -5,16 +5,16 @@ jobs:
   run-tests:
     name: Run PHPUnit tests
     runs-on: ubuntu-latest
-    container: 
+    container:
       image: composer:latest
       volume:
         - ${{ github.workspace }}:/app
     steps:
-      -name: Checkout the repo
-       uses: actions/checkout@v2
+      - name: Checkout the repo
+        uses: actions/checkout@v2
 
-      -name: Running composer install
-       run: composer install
+      - name: Running composer install
+        run: composer install
 
-      -name: Running phpunit
-       run: ./vendor/bin/phpunit tests
+      - name: Running phpunit
+        run: ./vendor/bin/phpunit tests
